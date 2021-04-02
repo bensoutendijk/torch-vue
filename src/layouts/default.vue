@@ -1,9 +1,24 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="Layout-default">
+    <Sidebar />
+    <main>
+      <slot />
+    </main>
   </div>
-  <main>
-    <slot />
-  </main>
 </template>
+
+<script>
+import Sidebar from '@/components/Sidebar.vue'
+
+export default {
+  components: {
+    Sidebar
+  }
+}
+</script>
+
+<style lang="scss">
+.Layout-default {
+  @apply flex;
+}
+</style>
