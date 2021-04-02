@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import Layout from '@/layouts/default.vue'
+import Layout from "@/layouts/default.vue";
 
 export default {
-  name: 'Dashboard',
-  created () {
-    this.$emit('update:layout', Layout)
-  }
-}
+  name: "Dashboard",
+  created() {
+    this.$emit("update:layout", Layout);
+  },
+};
 </script>
 
 <style lang="scss">

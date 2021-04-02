@@ -6,11 +6,11 @@
 
 <script>
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
-      layout: 'div'
-    }
-  }
-}
+      layout: "div",
+    };
+  },
+};
 </script>

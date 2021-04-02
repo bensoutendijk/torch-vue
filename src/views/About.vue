@@ -5,16 +5,14 @@
 </template>
 
 <script>
-import Layout from '@/layouts/default'
+import Layout from "@/layouts/default";
 
 export default {
-  name: 'Home',
-  created () {
-    this.$emit('update:layout', Layout)
-  }
-}
+  name: "Home",
+  created() {
+    this.$emit("update:layout", Layout);
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

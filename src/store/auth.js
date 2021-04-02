@@ -1,32 +1,28 @@
 // initial state
 const state = () => ({
   user: {
-    name: 'Ben'
+    name: "Ben",
   },
-  loggedIn: true
-})
+  loggedIn: true,
+});
 
 // getters
 const getters = {
-  getUsername (state) {
-    return state.user.name
-  }
-}
+  getUsername(state) {
+    return state.user.name;
+  },
+};
 
 // actions
-const actions = {
-
-}
+const actions = {};
 
 // mutations
-const mutations = {
-
-}
+const mutations = {};
 
 export default {
   namespaced: true,
   state,
   getters,
   actions,
-  mutations
-}
+  mutations,
+};
