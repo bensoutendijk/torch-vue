@@ -1,15 +1,15 @@
 <template>
-  <div class="Home">
+  <div class="Dashboard">
     <h1>{{ user.name }}</h1>
   </div>
 </template>
 
 <script>
-import Layout from '@/layouts/default'
+import Layout from '@/layouts/default.vue'
 import { mapState } from 'vuex'
 
 export default {
-  name: 'Home',
+  name: 'Dashboard',
   computed: {
     ...mapState({
       user: state => state.auth.user
@@ -21,6 +21,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.Dashboard {
+  display: flex;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <component :is="layout">
-    <router-view v-model:layout="layout" />
+    <router-view @update:layout="layout = $event" />
   </component>
 </template>
 
