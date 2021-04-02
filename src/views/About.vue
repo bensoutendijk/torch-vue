@@ -1,15 +1,16 @@
 <template>
-  <layout>
+  <div class="About">
     <h1>About</h1>
-  </layout>
+  </div>
 </template>
 
 <script>
 import Layout from '@/layouts/default'
 
 export default {
-  components: {
-    Layout
+  name: 'Home',
+  created () {
+    this.$emit('update:layout', Layout)
   }
 }
 </script>
