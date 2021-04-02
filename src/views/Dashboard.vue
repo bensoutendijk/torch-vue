@@ -23,6 +23,6 @@ export default {
 
 <style lang="scss">
 .Dashboard {
-  display: flex;
+  @apply flex;
 }
 </style>
