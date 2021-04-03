@@ -20,5 +20,10 @@ export default {
 <style lang="scss">
 .Layout-default {
   @apply flex;
+
+  > main {
+    @apply pl-64;
+    width: 100%;
+  }
 }
 </style>

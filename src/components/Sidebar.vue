@@ -5,8 +5,12 @@
       <span>'s Pages</span>
     </h1>
     <ul class="page-list">
-      <li class="list-item" v-for="page in pages" :key="page.id">
-        <span class="page-title">{{ page.title }}</span>
+      <li class="list-item" v-for="pageId in pages.allIds" :key="pageId">
+        <router-link :to="`/pages/${pageId}`">
+          <div class="page-link-content">
+            <span class="page-title">{{ pages.byId[pageId].title }}</span>
+          </div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -16,17 +20,10 @@
 import { mapState } from "vuex";
 
 export default {
-  data() {
-    return {
-      pages: [
-        { id: 1, title: "Getting Started" },
-        { id: 2, title: "This Is A Long Title Lorem Ipsum Dolor" },
-      ],
-    };
-  },
   computed: {
     ...mapState({
       user: (state) => state.auth.user,
+      pages: (state) => state.pages,
     }),
   },
 };
@@ -34,11 +31,12 @@ export default {
 
 <style lang="scss">
 .Sidebar {
-  @apply w-64 min-h-screen;
+  @apply w-64 h-screen fixed;
   @apply bg-grey-lighter;
 
   .header {
     @apply p-2;
+    @apply text-base font-semibold;
   }
 
   .page-list {
@@ -48,6 +46,22 @@ export default {
   }
 
   .list-item {
+    a {
+      @apply min-w-full;
+      @apply text-black;
+      text-decoration: none;
+
+      &.router-link-active {
+        @apply font-bold;
+
+        .page-link-content {
+          @apply bg-grey-light;
+        }
+      }
+    }
+  }
+
+  .page-link-content {
     @apply p-1 pl-2;
 
     &:hover {

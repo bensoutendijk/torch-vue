@@ -12,5 +12,8 @@ export default {
       layout: "div",
     };
   },
+  mounted() {
+    this.$store.dispatch("pages/fetchPages");
+  },
 };
 </script>
