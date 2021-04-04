@@ -1,28 +1,28 @@
 <template>
   <div class="Page">
     <div class="loading" v-if="!page"></div>
-    <div v-else class="page-container">
-      <h1 class="page-title">{{ page.title }}</h1>
-      <div class="page-content" v-html="content"></div>
+    <div class="page-container">
+      <h1 v-if="page" class="page-title">{{ page.title }}</h1>
+      <VueTrix v-model="page.body" placeholder="Enter content" localStorage />
     </div>
   </div>
 </template>
 
 <script>
 import Layout from "@/layouts/default.vue";
-import marked from "marked";
+import VueTrix from "vue-trix";
+
 import { getPageById } from "@/mockData";
 
 export default {
+  components: {
+    VueTrix,
+  },
   data() {
     return {
+      editor: Object,
       page: null,
     };
-  },
-  computed: {
-    content() {
-      return marked(this.page.body);
-    },
   },
   methods: {
     async fetchPage() {
